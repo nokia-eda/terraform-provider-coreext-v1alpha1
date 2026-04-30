@@ -1,0 +1,11 @@
+Path,Method,Schema,Model Name,Supported,Datasource,Resource
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups,GET,com.nokia.eda.coreext.v1alpha1.PlatformBackupList,platform_backup_list,true,true,false
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups,POST,com.nokia.eda.coreext.v1alpha1.PlatformBackup,platform_backup,true,false,true
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name},DELETE,,platform_backup,true,false,true
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name},GET,com.nokia.eda.coreext.v1alpha1.PlatformBackup,platform_backup,true,true,true
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_artifacts,GET,,,false,false,false
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_artifacts/{artifact},GET,,,false,false,false
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_input,GET,WorkflowGetInputsRespElem,workflow_get_inputs_resp_elem,true,true,false
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_input,PUT,WorkflowInputData,,false,false,false
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_logs,GET,,,false,false,false
+/workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_terminate,PUT,,,false,false,false

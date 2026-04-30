@@ -1,0 +1,30 @@
+provider:
+  name: coreext
+
+data_sources:
+  platform_backup:
+    read:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}
+      method: GET
+
+  platform_backup_list:
+    read:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups
+      method: GET
+
+  workflow_get_inputs_resp_elem:
+    read:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_input
+      method: GET
+
+resources:
+  platform_backup:
+    create:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups
+      method: POST
+    read:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}
+      method: GET
+    delete:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}
+      method: DELETE

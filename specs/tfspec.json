@@ -1,0 +1,684 @@
+{
+    "datasources": [
+        {
+            "name": "platform_backup",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "name of the PlatformBackup"
+                        }
+                    },
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "optional",
+                            "attributes": [
+                                {
+                                    "name": "exclude_identity_git_repo",
+                                    "bool": {
+                                        "computed_optional_required": "optional",
+                                        "description": "Exclude the identity Git repository from the backup"
+                                    }
+                                },
+                                {
+                                    "name": "exclude_security_git_repo",
+                                    "bool": {
+                                        "computed_optional_required": "optional",
+                                        "description": "Exclude the security Git repository from the backup"
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "optional",
+                                        "description": "Name of the tarball. [default=eda-backup-\u003ccluster-member-name\u003e-\u003cdate-and-time\u003e.tar.gz]"
+                                    }
+                                },
+                                {
+                                    "name": "timeout",
+                                    "string": {
+                                        "computed_optional_required": "optional",
+                                        "description": "Timeout duration for backup. [default=5m]"
+                                    }
+                                }
+                            ],
+                            "description": "PlatformBackupSpec defines the desired state of PlatformBackup"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "result",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "Result"
+                                    }
+                                }
+                            ],
+                            "description": "PlatformBackupStatus defines the observed state of PlatformBackup"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "platform_backup_list",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "fields",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "a comma-separated list of resource fields to fetch/return.  If unspecified, all fields are fetched.  If empty, only key-fields are fetched."
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "an EQL \"where\" expression that will be used to filter the set of resources returned."
+                        }
+                    },
+                    {
+                        "name": "label_selector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "A label selector string to filter the results based on resource labels. If specified multiple times, the union of resources which satisfy a label-selector will be returned."
+                        }
+                    },
+                    {
+                        "name": "labelselector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "Deprecated: a label selector string to filter the results based on CR labels"
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "items",
+                        "list_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "alarms",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "critical",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "major",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "minor",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "warning",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "api_version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "deviations",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "count",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "kind",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "metadata",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "annotations",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "labels",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "name",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "namespace",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "spec",
+                                        "single_nested": {
+                                            "computed_optional_required": "optional",
+                                            "attributes": [
+                                                {
+                                                    "name": "exclude_identity_git_repo",
+                                                    "bool": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "Exclude the identity Git repository from the backup"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "exclude_security_git_repo",
+                                                    "bool": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "Exclude the security Git repository from the backup"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "name",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "Name of the tarball. [default=eda-backup-\u003ccluster-member-name\u003e-\u003cdate-and-time\u003e.tar.gz]"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "timeout",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "Timeout duration for backup. [default=5m]"
+                                                    }
+                                                }
+                                            ],
+                                            "description": "PlatformBackupSpec defines the desired state of PlatformBackup"
+                                        }
+                                    },
+                                    {
+                                        "name": "status",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "result",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "Result"
+                                                    }
+                                                }
+                                            ],
+                                            "description": "PlatformBackupStatus defines the observed state of PlatformBackup"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "workflow_get_inputs_resp_elem",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "name of the PlatformBackup"
+                        }
+                    },
+                    {
+                        "name": "workflow_get_inputs_resp_elem",
+                        "set_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "ack_prompt",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "group",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "kind",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "name",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "namespace",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "schema_prompt",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "provider": {
+        "name": "coreext"
+    },
+    "resources": [
+        {
+            "name": "platform_backup",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "coreext.eda.nokia.com/v1alpha1"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^coreext\\\\.eda\\\\.nokia\\\\.com/v1alpha1$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "PlatformBackup"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^PlatformBackup$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "validators": [
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.LengthAtMost(253)"
+                                                }
+                                            },
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "regexp"
+                                                        },
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$\"), \"\")"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "default": {
+                                            "static": "eda-system"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "exclude_identity_git_repo",
+                                    "bool": {
+                                        "computed_optional_required": "computed_optional",
+                                        "default": {
+                                            "static": false
+                                        },
+                                        "description": "Exclude the identity Git repository from the backup"
+                                    }
+                                },
+                                {
+                                    "name": "exclude_security_git_repo",
+                                    "bool": {
+                                        "computed_optional_required": "computed_optional",
+                                        "default": {
+                                            "static": false
+                                        },
+                                        "description": "Exclude the security Git repository from the backup"
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "default": {
+                                            "static": ""
+                                        },
+                                        "description": "Name of the tarball. [default=eda-backup-\u003ccluster-member-name\u003e-\u003cdate-and-time\u003e.tar.gz]"
+                                    }
+                                },
+                                {
+                                    "name": "timeout",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "default": {
+                                            "static": "5m"
+                                        },
+                                        "description": "Timeout duration for backup. [default=5m]"
+                                    }
+                                }
+                            ],
+                            "description": "PlatformBackupSpec defines the desired state of PlatformBackup"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "result",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "Result"
+                                    }
+                                }
+                            ],
+                            "description": "PlatformBackupStatus defines the observed state of PlatformBackup"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "name of the PlatformBackup"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "version": "0.1"
+}

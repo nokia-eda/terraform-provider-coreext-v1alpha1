@@ -1,0 +1,34 @@
+workflow_get_inputs_resp_elem:
+  - read:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_input
+      method: GET
+
+workflow_input_data:
+  - update:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_input
+      method: PUT
+
+com.nokia.eda.coreext.v1alpha1.platform_backup:
+  - create:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups
+      method: POST
+  - read:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}
+      method: GET
+
+com.nokia.eda.coreext.v1alpha1.platform_backup_list:
+  - read:
+      path: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups
+      method: GET
+
+totalPaths: 7
+totalSchemas: 10
+usedSchemas: 4
+unusedSchemas: 6
+unusedSchemaList:
+  - ErrorResponse
+  - WorkflowIdentifier
+  - WorkflowInputDataElem
+  - com.nokia.eda.coreext.v1alpha1.PlatformBackup_alarms
+  - com.nokia.eda.coreext.v1alpha1.PlatformBackup_deviations
+  - com.nokia.eda.coreext.v1alpha1.PlatformBackup_metadata
