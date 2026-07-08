@@ -1,0 +1,19 @@
+datasources:
+  - model_name: platform_backup_list
+    oas_endpoint: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups
+    oas_schema: com.nokia.eda.coreext.v1alpha1.PlatformBackupList
+  - model_name: platform_backup
+    oas_endpoint: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}
+    oas_schema: com.nokia.eda.coreext.v1alpha1.PlatformBackup
+  - model_name: workflow_get_inputs_resp_elem
+    oas_endpoint: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups/{name}/_input
+    oas_schema: WorkflowGetInputsRespElem
+
+resources:
+  - model_name: platform_backup
+    oas_endpoint: /workflows/v1/coreext.eda.nokia.com/v1alpha1/platformbackups
+    oas_schema: com.nokia.eda.coreext.v1alpha1.PlatformBackup
+
+qualified:
+  datasources:
+  resources:
