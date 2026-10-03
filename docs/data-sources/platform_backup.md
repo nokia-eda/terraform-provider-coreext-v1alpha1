@@ -19,10 +19,6 @@ description: |-
 
 - `name` (String) name of the PlatformBackup
 
-### Optional
-
-- `spec` (Attributes) PlatformBackupSpec defines the desired state of PlatformBackup (see [below for nested schema](#nestedatt--spec))
-
 ### Read-Only
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--alarms))
@@ -30,18 +26,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) PlatformBackupSpec defines the desired state of PlatformBackup (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) PlatformBackupStatus defines the observed state of PlatformBackup (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `exclude_identity_git_repo` (Boolean) Exclude the identity Git repository from the backup
-- `exclude_security_git_repo` (Boolean) Exclude the security Git repository from the backup
-- `name` (String) Name of the tarball. [default=eda-backup-<cluster-member-name>-<date-and-time>.tar.gz]
-- `timeout` (String) Timeout duration for backup. [default=5m]
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -71,6 +57,17 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `exclude_identity_git_repo` (Boolean) Exclude the identity Git repository from the backup
+- `exclude_security_git_repo` (Boolean) Exclude the security Git repository from the backup
+- `name` (String) Name of the tarball. [default=eda-backup-<cluster-member-name>-<date-and-time>.tar.gz]
+- `timeout` (String) Timeout duration for backup. [default=5m]
 
 
 <a id="nestedatt--status"></a>

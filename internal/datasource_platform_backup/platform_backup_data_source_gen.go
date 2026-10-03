@@ -91,22 +91,22 @@ func PlatformBackupDataSourceSchema(ctx context.Context) schema.Schema {
 			"spec": schema.SingleNestedAttribute{
 				Attributes: map[string]schema.Attribute{
 					"exclude_identity_git_repo": schema.BoolAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Exclude the identity Git repository from the backup",
 						MarkdownDescription: "Exclude the identity Git repository from the backup",
 					},
 					"exclude_security_git_repo": schema.BoolAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Exclude the security Git repository from the backup",
 						MarkdownDescription: "Exclude the security Git repository from the backup",
 					},
 					"name": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Name of the tarball. [default=eda-backup-<cluster-member-name>-<date-and-time>.tar.gz]",
 						MarkdownDescription: "Name of the tarball. [default=eda-backup-<cluster-member-name>-<date-and-time>.tar.gz]",
 					},
 					"timeout": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Timeout duration for backup. [default=5m]",
 						MarkdownDescription: "Timeout duration for backup. [default=5m]",
 					},
@@ -116,7 +116,7 @@ func PlatformBackupDataSourceSchema(ctx context.Context) schema.Schema {
 						AttrTypes: SpecValue{}.AttributeTypes(ctx),
 					},
 				},
-				Optional:            true,
+				Computed:            true,
 				Description:         "PlatformBackupSpec defines the desired state of PlatformBackup",
 				MarkdownDescription: "PlatformBackupSpec defines the desired state of PlatformBackup",
 			},

@@ -110,33 +110,33 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "exclude_identity_git_repo",
                                     "bool": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Exclude the identity Git repository from the backup"
                                     }
                                 },
                                 {
                                     "name": "exclude_security_git_repo",
                                     "bool": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Exclude the security Git repository from the backup"
                                     }
                                 },
                                 {
                                     "name": "name",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Name of the tarball. [default=eda-backup-\u003ccluster-member-name\u003e-\u003cdate-and-time\u003e.tar.gz]"
                                     }
                                 },
                                 {
                                     "name": "timeout",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Timeout duration for backup. [default=5m]"
                                     }
                                 }
@@ -306,33 +306,33 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "exclude_identity_git_repo",
                                                     "bool": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Exclude the identity Git repository from the backup"
                                                     }
                                                 },
                                                 {
                                                     "name": "exclude_security_git_repo",
                                                     "bool": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Exclude the security Git repository from the backup"
                                                     }
                                                 },
                                                 {
                                                     "name": "name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Name of the tarball. [default=eda-backup-\u003ccluster-member-name\u003e-\u003cdate-and-time\u003e.tar.gz]"
                                                     }
                                                 },
                                                 {
                                                     "name": "timeout",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Timeout duration for backup. [default=5m]"
                                                     }
                                                 }
